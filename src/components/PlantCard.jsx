@@ -4,14 +4,17 @@ function PlantCard({ plant }) {
   const [inStock, setInStock] = useState(true);
 
   return (
-    <div className="card">
+    <li className="card" data-testid="plant-item">
       <img src={plant.image} alt={plant.name} />
-      <h3>{plant.name}</h3>
-      <p>${plant.price}</p>
-      <button onClick={() => setInStock(!inStock)}>
+      <h4>{plant.name}</h4>
+      <p>Price: ${plant.price}</p>
+      <button
+        onClick={() => setInStock(!inStock)}
+        style={{ backgroundColor: inStock ? "green" : "red", color: "white" }}
+      >
         {inStock ? "In Stock ✅" : "Out of Stock ❌"}
       </button>
-    </div>
+    </li>
   );
 }
 
