@@ -7,12 +7,9 @@ function PlantCard({ plant }) {
     <li className="card" data-testid="plant-item">
       <img src={plant.image} alt={plant.name} />
       <h4>{plant.name}</h4>
-      <p>Price: ${plant.price}</p>
-      <button
-        onClick={() => setInStock(!inStock)}
-        style={{ backgroundColor: inStock ? "green" : "red", color: "white" }}
-      >
-        {inStock ? "In Stock ✅" : "Out of Stock ❌"}
+      <p>Price: {plant.price}</p>
+      <button onClick={() => setInStock(!inStock)}>
+        {inStock ? "In Stock" : "Out of Stock"}
       </button>
     </li>
   );
